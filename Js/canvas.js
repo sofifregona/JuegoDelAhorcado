@@ -9,13 +9,12 @@ var tamanoFuente;
 
 function iniciarDibujo(palabra) {
     limpiarPantalla(0, 0, ancho, alto);
-    dibujarBaseMastil(0.3, 0.5);
+    dibujarBaseMastil(0.3, 0.475);
     tamanoPalabra = palabra.length;
     tamanoFuente = (ancho / tamanoPalabra);
     if (tamanoFuente > 60) {
         tamanoFuente = 60;
     }
-    calcularLineas("");
 }
 
 //LIMPIAR PANTALLA
@@ -25,7 +24,7 @@ function limpiarPantalla(x, y, ancho, alto) {
     brush.fillRect(x, y, ancho, alto);
 }
 
-//DIBUJAR LINEAS Y LETRAS PALABRA
+//CALCULAR CANTIDAD DE LINEAS
 function calcularLineas() {
     var lineas = "";
     for (var i = 0; i < tamanoPalabra; i++) {
@@ -37,19 +36,19 @@ function calcularLineas() {
     return lineas;
 }
 
-//ESCRIBIR LETRAS EN LINEAS
-function transcribirLetra(lineas, tecla){
+//SOBREESCRIBIR LETRAS EN LINEAS
+function transcribirLetra(lineas, tecla) {
     var lineasArray = lineas.split("");
-    for (var i = 0; i < tamanoPalabra; i++){
-        if (tecla == palabra[i]){
-            lineasArray.splice(i*2, 1, tecla); 
+    for (var i = 0; i < tamanoPalabra; i++) {
+        if (tecla == palabra[i]) {
+            lineasArray.splice(i * 2, 1, tecla);
         }
     }
     return lineasArray.join("");
 }
 
-//ESCRIBIR LETRAS CORRECTAS
-function escribirLetrasCorrectas(lineas){
+//ESCRIBIR LINEAS Y LETRAS CORRECTAS
+function escribirLetrasCorrectas(lineas) {
     brush.fillStyle = "black";
     brush.strokeStyle = "black";
     brush.font = tamanoFuente + "px Quicksand";
@@ -60,10 +59,10 @@ function escribirLetrasCorrectas(lineas){
 }
 
 //ESCRIBIR LETRAS INCORRECTAS
-function escribirLetraIncorrectas(letrasIncorrectas){
+function escribirLetraIncorrectas(letrasIncorrectas) {
     brush.fillStyle = "red";
     brush.strokeStyle = "red";
-    brush.font = tamanoFuente*0.75 + "px Quicksand";
+    brush.font = tamanoFuente * 0.75 + "px Quicksand";
     brush.textAlign = "center";
     brush.beginPath();
     brush.fillText(letrasIncorrectas.join(" "), ancho * 0.5, alto * 0.65);
@@ -71,15 +70,11 @@ function escribirLetraIncorrectas(letrasIncorrectas){
 }
 
 //DIBUJAR ERRORES
-function dibujar(errores) {
+function dibujarErrores(errores) {
     if (errores <= 3) {
-        dibujarMastil(0.4, 0.45, errores);
+        dibujarMastil(0.4, 0.425, errores);
     } else {
-        dibujarHombrecito(0.6, 0.26, errores);
-        if (errores == 9) {
-            escribir("*** GAME OVER ***");
-            dibujarCarita(0.595, 0.257, false);
-        }
+        dibujarHombrecito(0.6, 0.235, errores);
     }
 }
 
@@ -129,7 +124,7 @@ function dibujarHombrecito(x, y, parte, salvado) {
     switch (parte) {
         case 4: //cabeza
             brush.beginPath();
-            brush.arc(ancho * x, alto * y, 16, 0, 2 * Math.PI);
+            brush.arc(ancho * x, alto * y, 13.5, 0, 2 * Math.PI);
             brush.stroke();
             break;
         case 5: //cuerpo
@@ -200,30 +195,29 @@ function dibujarCarita(x, y, salvado) {
         brush.lineWidth = 2;
         brush.beginPath();
         brush.lineTo(ancho * x, alto * y);
-        brush.lineTo(ancho * (x - 0.015), alto * (y - 0.01));
+        brush.lineTo(ancho * (x - 0.012), alto * (y - 0.012));
         brush.stroke();
         brush.beginPath();
-        brush.lineTo(ancho * x, alto * (y - 0.01));
-        brush.lineTo(ancho * (x - 0.015), alto * y);
+        brush.lineTo(ancho * x, alto * (y - 0.012));
+        brush.lineTo(ancho * (x - 0.012), alto * y);
         brush.stroke();
         brush.beginPath();
-        brush.lineTo(ancho * (x + 0.01), alto * y);
-        brush.lineTo(ancho * (x + 0.025), alto * (y - 0.01));
+        brush.lineTo(ancho * (x + 0.011), alto * y);
+        brush.lineTo(ancho * (x + 0.023), alto * (y - 0.012));
         brush.stroke();
         brush.beginPath();
-        brush.lineTo(ancho * (x + 0.01), alto * (y - 0.01));
-        brush.lineTo(ancho * (x + 0.025), alto * y);
+        brush.lineTo(ancho * (x + 0.011), alto * (y - 0.012));
+        brush.lineTo(ancho * (x + 0.023), alto * y);
         brush.stroke();
         brush.beginPath();
-        brush.arc(ancho * (x + 0.005), alto * (y + 0.026), 10, 3.655, 1.84 * Math.PI);
+        brush.arc(ancho * (x + 0.005), alto * (y + 0.026), 9, 3.655, 1.84 * Math.PI);
         brush.stroke();
     }
 }
 
 //DIBUJAR HOMBRECITO SALVADO
 function hombrecitoSalvado() {
-    limpiarPantalla(0, 0, ancho, alto*0.55);
-    escribir("¡GANASTE!");
+    limpiarPantalla(0, 0, ancho, alto * 0.55);
     dibujarHombrecito(0.5, 0.3, 4);
     dibujarHombrecito(0.5, 0.3, 5);
     dibujarHombrecito(0.5, 0.3, 6);
@@ -233,13 +227,30 @@ function hombrecitoSalvado() {
     dibujarCarita(0.488, 0.292, true);
 }
 
-//ESCRIBIR PALABRA
+//ESCRIBIR Y ANIMAR PALABRA
 function escribir(palabra) {
-    brush.fillStyle = "red";
-    brush.beginPath();
+    var color = "red";
     brush.font = "bold 25px Quicksand";
     brush.textAlign = "center";
-    brush.fillText(palabra, ancho * 0.5, alto * 0.15);
-    brush.fill();
+    var time = setInterval(function () {
+        if (!iniciarJuego) {
+            brush.clearRect(0, 0, ancho, alto * 0.11);
+            brush.fillStyle = "white"
+            brush.fillRect(0, 0, ancho, alto * 0.11);
+            brush.fillStyle = color;
+            brush.strokeStyle = color;
+            brush.beginPath();
+            brush.fillText(palabra, ancho * 0.5, alto * 0.1);
+            brush.fill();
+            brush.stroke();
+            if (color == "red") {
+                color = "black";
+            } else {
+                color = "red";
+            }
+        } else {
+            clearInterval(time);
+        }
+    }, 500);
 }
 

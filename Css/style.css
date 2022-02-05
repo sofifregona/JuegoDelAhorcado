@@ -119,12 +119,13 @@ canvas {
     background-color: white;
     width: 500px;
     height: 500px;
-    margin: 2%;
 }
 
 #panel-canvas {
     margin-bottom: 10px;
-    width: 510px;
+    width: 515px;
+    padding: 5px;
+    align-content: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -162,12 +163,13 @@ canvas {
         background-color: white;
         width: 400px;
         height: 400px;
-        margin: 2%;
     }
 
     #panel-canvas {
         margin-bottom: 8px;
-        width: 408px;
+        width: 412px;
+        padding: 4px;
+        align-content: center;
     }
 }
 
@@ -207,12 +209,13 @@ canvas {
         background-color: white;
         width: 300px;
         height: 300px;
-        margin: 2%;
     }
 
     #panel-canvas {
         margin-bottom: 6px;
-        width: 306px;
+        width: 309px;
+        padding: 3px;
+        align-content: center;
     }
 }
 

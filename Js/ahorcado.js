@@ -1,31 +1,20 @@
-/* VARIABLES --
-iniciarJuego: Sólo se activa al hacer click en el botón "iniciar juego" y se desactiva si se agregan palabras
-juegoGanado: Sólo se activa si el jugador ya ganó una partida anteriormente
-errores: Cantidad de errores
-palabra: palabra aleatoria seleccionada del banco de datos
-letrasPalabra: array que contiene las letras de la palabra aleatoria (ordenadas y sin repetir)
-letrasIngresadas: array con letras que ingresa el usuario
-letrasCorrectadas: array con las letras correctas que ingresa el usuario
-tecla: valor de la tecla presionada por el usuario
-*/
-
 var iniciarJuego = false;
 var errores = 0;
-var palabra, letrasPalabra, letrasIngresadas, letrasCorrectas, tecla, lineas;
+var palabra, letrasPalabra, letrasIngresadas, letrasCorrectas, letrasIncorrectas, tecla, lineas;
 
 //BOTÓN INICIAR JUEGO
 var botonIniciarJuego = document.querySelector("#boton-iniciar-juego");
 
-//Evento para (re)iniciar el juego
+//Evento para (re)iniciar el juego al escuchar el click del mouse
 botonIniciarJuego.addEventListener("click", function (event) {
     event.preventDefault();
 
-    apagar();
+    apagar(); //apagar animaciones (si las hay)
     iniciarJuego = true;
     errores = 0;
     palabra = palabraAleatoria();
     iniciarDibujo(palabra);
-    letrasPalabra = todasLasLetras(palabra);
+    letrasPalabra = letrasSinRepetir(palabra);
     letrasIngresadas = [];
     letrasCorrectas = [];
     letrasIncorrectas = [];
@@ -33,34 +22,39 @@ botonIniciarJuego.addEventListener("click", function (event) {
     escribirLetrasCorrectas(lineas);
 });
 
-//Evento para escuchar el teclado
+//Evento para evaluar estado de la partida al escuchar la tecla tipeada
 window.addEventListener("keydown", function (event) {
 
     tecla = event.key.toString().toUpperCase();
 
-    if (iniciarJuego) {
-        if (teclaValida(tecla)) {
-            if (!contiene(tecla, letrasIngresadas)) {
+    if (iniciarJuego) { //sólo se evalúa si el juego está iniciado
+        if (teclaValida(tecla)) { //valida el tipo de tecla ingresada
+            if (!contiene(tecla, letrasIngresadas)) { //evalua si ya se ingreso la tecla
                 letrasIngresadas.push(tecla);
                 letrasIngresadas.sort();
-                if (contiene(tecla, letrasPalabra)) {
+                if (contiene(tecla, letrasPalabra)) { //evalua si la palabra contiene la tecla
                     letrasCorrectas.push(tecla);
                     letrasCorrectas.sort();
                     lineas = transcribirLetra(lineas, tecla);
-                    limpiarPantalla(0, alto*0.71, ancho, alto);
-                    escribirLetrasCorrectas(lineas);
+                    limpiarPantalla(0, alto * 0.71, ancho, alto);
+                    escribirLetrasCorrectas(lineas); //La grafica en su lugar
                 } else {
                     errores++;
-                    dibujar(errores);
+                    dibujarErrores(errores);
                     letrasIncorrectas.push(tecla);
-                    limpiarPantalla(0, alto*0.58, ancho, alto*0.1);
-                    escribirLetraIncorrectas(letrasIncorrectas);
+                    limpiarPantalla(0, alto * 0.58, ancho, alto * 0.1);
+                    escribirLetraIncorrectas(letrasIncorrectas); //La grafica con las letras incorrectas
                 }
-                if (ganar(letrasPalabra, letrasCorrectas)) {
+                if (ganar()) { //Evalua si se ganó el juego
+                    iniciarJuego = false;
+                    escribir("¡GANASTE!", true);
                     encender();
                     hombrecitoSalvado();
-
+                }
+                if (perder()) {
                     iniciarJuego = false;
+                    escribir("GAME OVER", true);
+                    dibujarCarita(0.595, 0.232, false);
                 }
             }
         }
@@ -74,7 +68,7 @@ function palabraAleatoria() {
 }
 
 //Función que retorna un array con las letras que contiene la palabra aleatoria (ordenadas y sin repetir)
-function todasLasLetras(string) {
+function letrasSinRepetir(string) {
     var letras = [];
     var array = string.split('');
     for (var i = 0; i < array.length; i++) {
@@ -85,8 +79,8 @@ function todasLasLetras(string) {
     return letras.sort();
 }
 
-/*Validación a través del tamaño del array (deja afuera teclas como SHIFT, ALT, ENTER, etc)
-y utilizando código ASCII*/
+/*Validación de la tecla por tamaño (deja fuera teclas como SHIFT, ALT, ENTER, etc)
+y utilizando código ASCII (deja fuera caracteres especiales a excepción de la ñ)*/
 function teclaValida(tecla) {
     return (tecla.length == 1 && ((tecla.charCodeAt() >= 65 && tecla.charCodeAt() <= 90) || tecla.charCodeAt() == 209));
 }
@@ -97,8 +91,13 @@ function contiene(elemento, lista) {
 }
 
 //Función para evaluar si el usuario acertó la palabra
-function ganar(letrasPalabra, letrasCorrectas) {
+function ganar() {
     return (letrasCorrectas.length == letrasPalabra.length);
+}
+
+//Función para evaluar si el usuario perdió la partida
+function perder() {
+    return (errores == 9);
 }
 
 
