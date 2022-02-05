@@ -1,0 +1,236 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("fondo.jpg");
+    background-position: center;
+    background-size: cover;
+    background-color: #F3F5FC;
+    text-align: center;
+}
+
+p {
+    margin: auto;
+}
+
+.invisible {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+.titulo {
+    padding: 15px;
+    width: 30vw;
+    margin: auto;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+.inicio {
+    text-align: center;
+    align-content: center;
+}
+
+.btn {
+    text-align: center;
+    background-color: #072B61;
+    border: 2px solid;
+    border-color: #072B61;
+    color: white !important;
+}
+
+.btn:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    background: rgba(96, 158, 212, 0.2);
+    transition: all 1s ease;
+}
+
+.btn:hover:before {
+    width: 100%;
+}
+
+#boton-agregar-palabra {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #072B61;
+    border: 2px solid;
+    border-color: #072B61;
+    color: white !important;
+}
+
+.desplazar-izquierda {
+    transition: all 1s ease-in-out;
+    transform: translate(-125px, 0);
+}
+
+.desplazar-derecha {
+    transition: all 1s ease-in-out;
+    transform: translate(125px, 0);
+}
+
+.desplazar-original {
+    transform: translate(0px, 0px);
+    transition: all 1s ease-in-out;
+}
+
+.text-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 250px;
+    height: 40px;
+    border: #AAB2D5 1px solid;
+    text-align: center;
+    font-size: 15px;
+    outline: none;
+}
+
+/*PANTALLA ESCRITORIO (O CUALQUIER TAMAÑO SUPERIOR)*/
+#panel-agregar-palabra {
+    margin-top: 15px;
+    width: 250px;
+    height: 50px;
+}
+
+.btn {
+    width: 250px;
+    height: 40px;
+    font-size: 15px;
+}
+
+canvas {
+    background-color: white;
+    width: 500px;
+    height: 600px;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+@media screen and (max-width: 768px) {
+
+    /*PANTALLA TABLET*/
+    #panel-agregar-palabra {
+        margin-top: 10px;
+        width: 200px;
+        height: 40px;
+    }
+
+    .btn {
+        width: 200px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .text-input {
+        width: 200px;
+        height: 30px;
+        font-size: 12px;
+        border: #AAB2D5 1px solid;
+        outline: none;
+    }
+
+    .desplazar-izquierda {
+        transform: translate(-100px, 0);
+    }
+
+    .desplazar-derecha {
+        transform: translate(100px, 0);
+    }
+
+    canvas {
+        background-color: white;
+        width: 400px;
+        height: 480px;
+        margin-top: 2%;
+        margin-bottom: 5%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+
+    /*PANTALLA CELULAR*/
+    #panel-agregar-palabra {
+        margin-top: 8px;
+        width: 150px;
+        height: 20px;
+    }
+
+    .btn {
+        width: 150px;
+        height: 20px;
+        font-size: 9px;
+    }
+
+    .text-input {
+        width: 150px;
+        height: 20px;
+        font-size: 9px;
+        background-color: #EFF1FA;
+        border-color: #AAB2D5 2px solid;
+        outline: none;
+    }
+
+    .desplazar-izquierda {
+        transform: translate(-75px, 0);
+    }
+
+    .desplazar-derecha {
+        transform: translate(75px, 0);
+    }
+
+    canvas {
+        background-color: white;
+        width: 300px;
+        height: 360px;
+        margin-top: 2%;
+        margin-bottom: 5%;
+    }
+}
+
+#panel-agregar-palabra {
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+#contenedor {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+#panel-juego {
+    padding-top: 15px;
+    text-align: center;
+    justify-content: center;
+}
+
+#panel-canvas {
+    background-color: white;
+    box-shadow: 5px 5px 20px 1px grey;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    width: 600px;
+    border-radius: 20px;
+}

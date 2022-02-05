@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap">
+    <title>Juego del ahorcado</title>
+    <link rel="stylesheet" href="Css/style.css">
+</head>
+
+<body>
+    <script type="text/javascript" src="Js/fuegosArtificiales.js"></script>
+    <div id="inicio">
+        <h1 class="titulo">Juego del ahorcado</h1>
+        <p id="instrucciones">Instrucciones</p>
+    </div>
+    <div id="contenedor">
+        <div id="panel-juego">
+            <button class="btn desplazar-original" id="boton-iniciar-juego">Iniciar juego</button>
+            <div id="panel-agregar-palabra">
+                <input class="text-input desplazar-original" type="text" id="ingresar-nueva-palabra"
+                    placeholder="Escriba una nueva palabra">
+                <button class="btn desplazar-original" id="boton-agregar-palabra">
+                    <p class="visible" id="texto-boton">Agregar palabra</p>
+                </button>
+            </div>
+        </div>
+        <div id="panel-canvas">
+            <canvas id="pantalla" width=500 height=600></canvas>
+        </div>
+    </div>
+    <script type="text/javascript" src="Js/bancoDePalabras.js"></script>
+    <script type="text/javascript" src="Js/ahorcado.js"></script>
+    <script type="text/javascript" src="Js/agregarPalabra.js"></script>
+    <script type="text/javascript" src="Js/canvas.js"></script>
+</body>
+
+<footer>
+    <p>Copyright © 2022 María Sofía Fregona, v 1.0.0 beta<br>Background by <a
+            href='https://www.freepik.es/vectores/fondo'>freepik</a></p>
+</footer>
+
+</html>
