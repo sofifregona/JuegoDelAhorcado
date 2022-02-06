@@ -36,7 +36,7 @@ p {
 }
 
 .imagen {
-    margin-left: 14px;
+    margin-left: 45px;
     filter: drop-shadow(2px 2px 2px black);
 }
 
@@ -48,7 +48,7 @@ p {
     margin: 0 auto;
     margin-top: 15px;
     padding: 15px;
-    width: 60vw;
+    width: 100vw;
 }
 
 h1 {
@@ -205,7 +205,6 @@ canvas {
     }
 
     canvas {
-        background-color: white;
         width: 400px;
         height: 400px;
     }
