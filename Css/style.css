@@ -8,7 +8,7 @@ body {
     background-position: center;
     background-size: cover;
     background-color: #F3F5FC;
-    margin-top: 0px;    
+    margin-top: 0px;
     text-align: center;
 }
 
@@ -17,8 +17,12 @@ p {
     color:white;
 }
 
+#input-teclado {
+    display:none;
+}
+
 .audio {
-    display: none
+    display:none;
 }
 
 #div-titulo{
