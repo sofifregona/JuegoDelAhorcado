@@ -18,7 +18,10 @@ p {
 }
 
 #input-teclado {
-    display:none;
+    background: rgba(255, 255, 255, 0);
+    border:none;
+    outline: none;
+    /*color: rgba(255, 255, 255, 0);*/
 }
 
 .audio {
