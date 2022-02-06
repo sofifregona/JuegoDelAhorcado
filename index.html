@@ -8,15 +8,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap">
-    <title>Juego del ahorcado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quintessential&display=swap"
+        rel="stylesheet">
+    <title>La horca</title>
     <link rel="stylesheet" href="Css/style.css">
 </head>
 
 <body>
+    <audio class="audio" id="audio1" controls>
+        <source type="audio/mp3" src="Sonidos/sfxboing.mp3">
+    </audio>
+    <audio class="audio" id="audio2" controls>
+        <source type="audio/mp3" src="Sonidos/sfxpop.mp3">
+    </audio>
     <script type="text/javascript" src="Js/fuegosArtificiales.js"></script>
     <div id="inicio">
-        <h1 class="titulo">Juego del ahorcado</h1>
-        <p id="instrucciones">Instrucciones</p>
+        <div id="div-titulo">
+            <img class="imagen" width=65" heigth="65" src="horca4.png">
+            <h1 class="titulo">LA H&nbsp&nbsp&nbsp&nbspRCA</h1>
+        </div>
+        <h2 class="subtitulo">¡Descubre la palabra escondida y salva a Rigoberto de su destino!</h2>
+        <p id="instrucciones">Opcional: ¡Agrega nuevas palabras a nuestro banco de palabras! Puedes agregar varias de
+            ellas separándolas por un espacio. No se aceptan números ni caracteres especiales.</p>
     </div>
     <div id="contenedor">
         <div id="panel-juego">
@@ -40,8 +55,7 @@
 </body>
 
 <footer>
-    <p>Copyright © 2022 María Sofía Fregona, v 1.0.0 beta<br>Background by <a
-            href='https://www.freepik.es/vectores/fondo'>freepik</a></p>
+    <p>Copyright © 2022 María Sofía Fregona, v 1.0.0 beta</p>
 </footer>
 
 </html>

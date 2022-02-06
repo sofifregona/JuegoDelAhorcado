@@ -4,15 +4,25 @@
 }
 
 body {
-    background-image: url("fondo.jpg");
+    background-image: url("fondo3.jpg");
     background-position: center;
     background-size: cover;
     background-color: #F3F5FC;
+    margin-top: 0px;    
     text-align: center;
 }
 
 p {
     margin: auto;
+    color:white;
+}
+
+.audio {
+    display: none
+}
+
+#div-titulo{
+    position:relative;
 }
 
 .invisible {
@@ -25,12 +35,31 @@ p {
     transition: all 0.5s ease-in-out;
 }
 
-.titulo {
-    padding: 15px;
-    width: 30vw;
-    margin: auto;
-    font-family: 'Quicksand', sans-serif;
+.imagen {
+    margin-left: 14px;
+    filter: drop-shadow(2px 2px 2px black);
+}
 
+.titulo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 15px;
+    width: 60vw;
+}
+
+h1 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 40px;
+    color: white;
+    text-shadow: 3px 3px 4px black;
+}
+
+h2 {
+    color: white;
 }
 
 .inicio {
@@ -44,6 +73,8 @@ p {
     border: 2px solid;
     border-color: #072B61;
     color: white !important;
+    box-shadow: 5px 5px 8px 1px black;
+    outline: none;
 }
 
 .btn:before {
@@ -75,17 +106,31 @@ p {
 
 .desplazar-izquierda {
     transition: all 1s ease-in-out;
+    box-shadow: 0px 5px 8px 1px black;
     transform: translate(-125px, 0);
 }
 
 .desplazar-derecha {
     transition: all 1s ease-in-out;
+    box-shadow: 5px 5px 8px 1px black;
     transform: translate(125px, 0);
 }
 
 .desplazar-original {
     transform: translate(0px, 0px);
     transition: all 1s ease-in-out;
+}
+
+.erratico-derecha {
+    transform: translate(-120px, 0px);
+    box-shadow: 0px 5px 8px 1px black;
+    transition: all 0.1s ease-in-out;
+}
+
+.erratico-izquierda {
+    transform: translate(-125px, 0px);
+    box-shadow: 0px 5px 8px 1px black;
+    transition: all 0.1s ease-in-out;
 }
 
 .text-input {
@@ -112,11 +157,11 @@ p {
 .btn {
     width: 250px;
     height: 40px;
-    font-size: 15px;
+    font-size: 15px;    
 }
 
 canvas {
-    background-color: white;
+    background-color: rgba(0,0,0,0);
     width: 500px;
     height: 500px;
 }
@@ -140,13 +185,13 @@ canvas {
     .btn {
         width: 200px;
         height: 30px;
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .text-input {
         width: 200px;
         height: 30px;
-        font-size: 12px;
+        font-size: 13px;
         border: #AAB2D5 1px solid;
         outline: none;
     }
@@ -185,13 +230,13 @@ canvas {
     .btn {
         width: 150px;
         height: 20px;
-        font-size: 9px;
+        font-size: 11px;
     }
 
     .text-input {
         width: 150px;
         height: 20px;
-        font-size: 9px;
+        font-size: 11px;
         background-color: #EFF1FA;
         border-color: #AAB2D5 2px solid;
         outline: none;
@@ -240,10 +285,15 @@ canvas {
 }
 
 #panel-canvas {
-    background-color: white;
-    box-shadow: 5px 5px 20px 1px grey;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-style: none;
+    box-shadow: 5px 5px 20px 1px black;
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px;
+}
+
+footer {
+    margin-top: 20px;
 }

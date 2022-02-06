@@ -27,7 +27,7 @@ window.addEventListener("keydown", function (event) {
 
     tecla = event.key.toString().toUpperCase();
 
-    if (iniciarJuego) { //sólo se evalúa si el juego está iniciado
+    if (iniciarJuego) { //sólo se evalúa si el juego está iniciado y no se está agregando una palabra
         if (teclaValida(tecla)) { //valida el tipo de tecla ingresada
             if (!contiene(tecla, letrasIngresadas)) { //evalua si ya se ingreso la tecla
                 letrasIngresadas.push(tecla);

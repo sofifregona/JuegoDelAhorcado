@@ -20,8 +20,8 @@ function iniciarDibujo(palabra) {
 //LIMPIAR PANTALLA
 function limpiarPantalla(x, y, ancho, alto) {
     brush.clearRect(x, y, ancho, alto);
-    brush.fillStyle = "white"
-    brush.fillRect(x, y, ancho, alto);
+  //  brush.fillStyle = "white"
+  //  brush.fillRect(x, y, ancho, alto);
 }
 
 //CALCULAR CANTIDAD DE LINEAS
@@ -235,8 +235,6 @@ function escribir(palabra) {
     var time = setInterval(function () {
         if (!iniciarJuego) {
             brush.clearRect(0, 0, ancho, alto * 0.11);
-            brush.fillStyle = "white"
-            brush.fillRect(0, 0, ancho, alto * 0.11);
             brush.fillStyle = color;
             brush.strokeStyle = color;
             brush.beginPath();
