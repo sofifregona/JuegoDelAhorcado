@@ -251,14 +251,13 @@ canvas {
     }
 
     canvas {
-        background-color: white;
         width: 300px;
         height: 300px;
     }
 
     #panel-canvas {
         margin-bottom: 6px;
-        width: 309px;
+        width: 310px;
         padding: 3px;
         align-content: center;
     }
