@@ -24,7 +24,7 @@ function desactivarAnimacion() {
         textoBoton.classList.add("invisible");
 
         setTimeout(function () {
-            textoBoton.innerHTML = "¡Palabra guardada!";
+            textoBoton.innerHTML = "¡Se ha guardado correctamente!";
             textoBoton.classList.remove("invisible");
             textoBoton.classList.add("visible");
         }, 800);
@@ -35,7 +35,7 @@ function desactivarAnimacion() {
         }, 1600);
 
         setTimeout(function () {
-            textoBoton.innerHTML = "Agregar palabra";
+            textoBoton.innerHTML = "Agregar palabras";
             textoBoton.classList.remove("invisible");
             textoBoton.classList.add("visible");
         }, 2400);
@@ -44,7 +44,7 @@ function desactivarAnimacion() {
         textoBoton.classList.add("invisible");
 
         setTimeout(function () {
-            textoBoton.innerHTML = "Agregar palabra";
+            textoBoton.innerHTML = "Agregar palabras";
             textoBoton.classList.remove("invisible");
             textoBoton.classList.add("visible");
         }, 800);
@@ -58,7 +58,7 @@ function errorEntrada() {
     botonAgregarPalabra.classList.add("erratico-derecha");
 
     setTimeout(function () {
-        textoBoton.innerHTML = "Error. Palabra inválida";
+        textoBoton.innerHTML = "Error. Entrada inválida";
         textoBoton.classList.remove("invisible");
         textoBoton.classList.add("visible");
         botonAgregarPalabra.classList.remove("erratico-derecha");
