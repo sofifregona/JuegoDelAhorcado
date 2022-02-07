@@ -2,7 +2,7 @@ var listaDepalabras = ["Sueño", "Batalla", "Efecto", "Filete", "Choque", "Grane
     "Musica", "Recreo", "Campana", "Viga", "Recompensa", "Ropa", "Sombrero", "Boligrafo", "Cantante", "Semana",
     "Truco", "Entrenador", "Automovil", "Cuidado", "Nuez", "Tomate", "Viaje", "Caracol", "Gusto", "Ataque", "Papa",
     "Asistencia", "Arroz", "Experto", "Presentacion", "Cordon", "Pala", "Requerimiento", "Proteccion", "Tienda",
-    "Instancia", "Modo", "Pez", "Ayuda", "Curva", "Digestion", "Banda", "Television", "Borde", "Pendiente",
+    "Estancia", "Modo", "Pez", "Ayuda", "Curva", "Digestion", "Banda", "Television", "Borde", "Pendiente",
     "Camino", "Cohete", "Tranquilo", "Jardin", "Palabra", "Guerra", "Desarrollo", "Realidad", "Baloncesto", "Punto",
     "Dolor", "Perro", "Trebol", "Protesta", "Fracaso", "Familia", "Dinero", "Ajedrez", "Intencion", "Asociacion",
     "Crayon", "Aumento", "Perdida", "Orden", "Capitan", "Reina", "Retroalimentacion", "Inversion", "Mueble",
