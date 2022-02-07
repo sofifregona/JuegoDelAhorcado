@@ -15,17 +15,8 @@ screen.addEventListener("click", function (event) {
 });
 
 //Método para ingresar teclas apto para móviles con teclado suave
-inputInvisible.addEventListener("input", function () {
-    tecla = inputInvisible.value.toUpperCase();
-    inputInvisible.value = "";
-    jugar();
-});
 
 //Método para ingresar teclas ideal para escritorio
-window.addEventListener("keydown", function (event) {
-    tecla = event.key.toString().toUpperCase();
-    jugar();
-});
 
 //Evento para (re)iniciar el juego al escuchar el click del mouse
 botonIniciarJuego.addEventListener("click", function (event) {
@@ -47,7 +38,9 @@ botonIniciarJuego.addEventListener("click", function (event) {
 });
 
 //Función que activa el juego
-function jugar() {
+inputInvisible.addEventListener("input", function () {
+    tecla = inputInvisible.value.toUpperCase();
+    inputInvisible.value = "";
     if (iniciarJuego) { //sólo se evalúa si el juego está iniciado y no se está agregando una palabra
         if (teclaValida(tecla)) { //valida el tipo de tecla ingresada
             if (!contiene(tecla, letrasIngresadas)) { //evalua si ya se ingreso la tecla
@@ -81,7 +74,7 @@ function jugar() {
             }
         }
     }
-}
+});
 
 //Función para seleccionar palabra aleatoria del banco de palabras
 function palabraAleatoria() {
