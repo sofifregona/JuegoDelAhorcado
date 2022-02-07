@@ -7,17 +7,17 @@ var botonIniciarJuego = document.querySelector("#boton-iniciar-juego");
 var inputInvisible = document.querySelector("#input-teclado");
 var screen = document.querySelector("canvas");
 
-screen.addEventListener("click", function(event) {
-    if (iniciarJuego){
+screen.addEventListener("click", function (event) {
+    if (iniciarJuego) {
         event.preventDefault();
         inputInvisible.focus();
     }
-})
+});
 
 //Evento para (re)iniciar el juego al escuchar el click del mouse
 botonIniciarJuego.addEventListener("click", function (event) {
     event.preventDefault();
-
+    inputInvisible.focus();
     apagar(); //apagar animaciones (si las hay)
     iniciarJuego = true;
     errores = 0;
@@ -32,10 +32,11 @@ botonIniciarJuego.addEventListener("click", function (event) {
 });
 
 //Evento para evaluar estado de la partida al escuchar la tecla tipeada
-window.addEventListener("keydown", function (event) {
-
-    tecla = event.key.toString().toUpperCase();
-
+inputInvisible.addEventListener("input", function () {
+    tecla = inputInvisible.value.toUpperCase();
+    inputInvisible.value = "";
+    console.log(tecla);
+    console.log(inputInvisible.value);
     if (iniciarJuego) { //sólo se evalúa si el juego está iniciado y no se está agregando una palabra
         if (teclaValida(tecla)) { //valida el tipo de tecla ingresada
             if (!contiene(tecla, letrasIngresadas)) { //evalua si ya se ingreso la tecla
@@ -91,7 +92,7 @@ function letrasSinRepetir(string) {
 /*Validación de la tecla por tamaño (deja fuera teclas como SHIFT, ALT, ENTER, etc)
 y utilizando código ASCII (deja fuera caracteres especiales a excepción de la ñ)*/
 function teclaValida(tecla) {
-    return (tecla.length == 1 && ((tecla.charCodeAt() >= 65 && tecla.charCodeAt() <= 90) || tecla.charCodeAt() == 209));
+    return ((tecla.charCodeAt() >= 65 && tecla.charCodeAt() <= 90) || tecla.charCodeAt() == 209);
 }
 
 //Función para evaluar si un array contiene un letra determinada

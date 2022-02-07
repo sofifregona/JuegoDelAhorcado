@@ -4,12 +4,15 @@
 }
 
 body {
+    min-width: 310px;
+    background-color: #F3F5FC;
     background-image: url("fondo3.jpg");
     background-position: center;
     background-size: cover;
-    background-color: #F3F5FC;
     margin-top: 0px;
+    padding: 8px;
     text-align: center;
+
 }
 
 p {
@@ -21,7 +24,11 @@ p {
     background: rgba(255, 255, 255, 0);
     border:none;
     outline: none;
-    /*color: rgba(255, 255, 255, 0);*/
+    color: rgba(255, 255, 255, 0);
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
 }
 
 .audio {
@@ -43,7 +50,7 @@ p {
 }
 
 .imagen {
-    margin-left: 45px;
+    margin-left: 14px;
     filter: drop-shadow(2px 2px 2px black);
 }
 
@@ -55,7 +62,7 @@ p {
     margin: 0 auto;
     margin-top: 15px;
     padding: 15px;
-    width: 100vw;
+    width: 300px;
 }
 
 h1 {
@@ -174,11 +181,18 @@ canvas {
 }
 
 #panel-canvas {
-    margin-bottom: 10px;
     width: 515px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 20px 1px black;
+    border-style: none;
+    border-radius: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 5px;
     align-content: center;
-}
+}    
 
 @media screen and (max-width: 768px) {
 
@@ -217,8 +231,8 @@ canvas {
     }
 
     #panel-canvas {
-        margin-bottom: 8px;
         width: 412px;
+        margin-bottom: 8px;
         padding: 4px;
         align-content: center;
     }
@@ -262,8 +276,8 @@ canvas {
     }
 
     #panel-canvas {
-        margin-bottom: 6px;
         width: 310px;
+        margin-bottom: 6px;
         padding: 3px;
         align-content: center;
     }
@@ -279,7 +293,6 @@ canvas {
 #contenedor {
     width: 100%;
     height: 100%;
-    justify-content: center;
     text-align: center;
 }
 
@@ -287,16 +300,6 @@ canvas {
     padding-top: 15px;
     text-align: center;
     justify-content: center;
-}
-
-#panel-canvas {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-style: none;
-    box-shadow: 5px 5px 20px 1px black;
-    margin-top: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 20px;
 }
 
 footer {
