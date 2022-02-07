@@ -16,7 +16,7 @@ var listaDepalabras = ["Sueño", "Batalla", "Efecto", "Filete", "Choque", "Grane
     "Extraño", "Tormenta", "Lluvia", "Pensamiento", "Muelle", "Cara", "Moneda", "Centavo", "Escalon", "Software",
     "Cama", "Bufanda", "Mascara", "Lectura", "Industria", "Esperanza", "Campeonato", "Revolucion", "Puntada",
     "Alarma", "Rango", "Aritmetica", "Fruta", "Botella", "Ventana", "Hoyo", "Motor", "Repollo", "Mono", "Lapiz",
-    "Vestir", "Enfermedad", "Regla", "Aire", "Niebla", "Detalle", "Calcetin", "Advertencia", "Vidrio", "Estofado",
+    "Vestido", "Enfermedad", "Regla", "Aire", "Niebla", "Detalle", "Calcetin", "Advertencia", "Vidrio", "Estofado",
     "Lino", "Expansion", "Volumen", "Caida", "Presencia", "Propietario", "Chispa", "Conocimiento", "Anuncio",
     "Iglesia", "Religion", "Interaccion", "Aparato", "Agua", "Granja", "Movimiento", "Gota", "Creencia", "Acero",
     "Sopa", "Crema", "Profesor", "Representante", "Creador", "Madre", "Pintura", "Pasillo", "Ganador", "Usuario",
