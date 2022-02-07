@@ -16,14 +16,15 @@ screen.addEventListener("click", function (event) {
 
 //Método para ingresar teclas apto para móviles con teclado suave
 inputInvisible.addEventListener("input", function () {
-    jugar();
     tecla = inputInvisible.value.toUpperCase();
     inputInvisible.value = "";
+    jugar();
 });
 
 //Método para ingresar teclas ideal para escritorio
 window.addEventListener("keydown", function (event) {
     tecla = event.key.toString().toUpperCase();
+    jugar();
 });
 
 //Evento para (re)iniciar el juego al escuchar el click del mouse
