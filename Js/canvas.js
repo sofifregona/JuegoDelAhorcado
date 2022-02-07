@@ -22,8 +22,8 @@ function iniciarDibujo(palabra) {
 //LIMPIAR PANTALLA
 function limpiarPantalla(x, y, ancho, alto) {
     brush.clearRect(x, y, ancho, alto);
-  //  brush.fillStyle = "white"
-  //  brush.fillRect(x, y, ancho, alto);
+    //  brush.fillStyle = "white"
+    //  brush.fillRect(x, y, ancho, alto);
 }
 
 //CALCULAR CANTIDAD DE LINEAS
@@ -72,13 +72,13 @@ function escribirLetraIncorrectas(letrasIncorrectas) {
 }
 
 //ESCRIBIR PALABRA CORRECTA
-function palabraCorrecta(){
+function palabraCorrecta() {
     brush.fillStyle = "black";
     brush.strokeStyle = "black";
     brush.font = "bold 20px Playfair Display";
     brush.textAlign = "center";
     brush.beginPath();
-    brush.fillText("La palabra correcta era "+palabra, ancho * 0.5, alto * 0.95);
+    brush.fillText("La palabra correcta era " + palabra, ancho * 0.5, alto * 0.95);
     brush.fill();
 }
 

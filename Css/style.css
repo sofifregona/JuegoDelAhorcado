@@ -45,21 +45,21 @@ h1 {
 }
 
 h2 {
-    width: 360px;
+    width: 400px;
     font-family: 'Playfair Display', sans-serif;
     text-shadow: 3px 3px 4px black;
     color: white;
     margin: auto;
-    margin-top:10px;
+    margin-top: 10px;
 }
 
 #instrucciones {
-    width: 360px;
+    width: 400px;
     color: white;
     text-shadow: 3px 3px 4px black;
     color: white;
     margin: auto;
-    margin-top:15px;
+    margin-top: 15px;
     text-align: justify;
 }
 
@@ -139,14 +139,6 @@ p {
     outline: none;
 }
 
-span {
-    color:red;
-    font-family: 'Quicksand';
-    font-weight:900;
-    font-size:0px;
-    text-shadow: 1px 1px 2px black;
-}
-
 #panel-canvas {
     width: 410px;
     background-color: rgba(255, 255, 255, 0.5);
@@ -182,23 +174,12 @@ footer {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
 /********************************/
 
 /* EFECTOS */
 .invisible {
     opacity: 0;
-    transition: all 0.5s ease-in-out;
-}
-
-.invisible2 {
-    opacity:0;
-    font-size:0px;
-    transition: all 0.5s ease-in-out;
-}
-
-.visible2 {
-    opacity:1;
-    font-size: 15px;
     transition: all 0.5s ease-in-out;
 }
 
@@ -235,10 +216,19 @@ footer {
     box-shadow: 0px 5px 8px 1px black;
     transition: all 0.1s ease-in-out;
 }
+
 /********************************/
 
 /* PANTALLA TABLET */
 @media screen and (max-width: 768px) {
+
+    h2 {
+        width: 330px;
+    }
+
+    #instrucciones {
+        width: 330px;
+    }
 
     .btn {
         width: 200px;
@@ -288,10 +278,19 @@ footer {
         transform: translate(-100px, 0);
     }
 }
+
 /********************************/
 
 /* PANTALLA TELÉFONO MÓVIL */
 @media screen and (max-width: 375px) {
+
+    h2 {
+        width: 250px;
+    }
+
+    #instrucciones {
+        width: 250px;
+    }
 
     .btn {
         width: 150px;

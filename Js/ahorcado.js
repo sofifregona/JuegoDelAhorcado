@@ -15,20 +15,22 @@ screen.addEventListener("click", function (event) {
 });
 
 //Método para ingresar teclas apto para móviles con teclado suave
-inputInvisible.addEventListener("input", function(){
+inputInvisible.addEventListener("input", function () {
     jugar();
     tecla = inputInvisible.value.toUpperCase();
     inputInvisible.value = "";
 });
 
 //Método para ingresar teclas ideal para escritorio
-window.addEventListener("keydown", function(event){
+window.addEventListener("keydown", function (event) {
     tecla = event.key.toString().toUpperCase();
 });
 
 //Evento para (re)iniciar el juego al escuchar el click del mouse
 botonIniciarJuego.addEventListener("click", function (event) {
     event.preventDefault();
+    audio2.load();
+    audio2.play();
     inputInvisible.focus();
     apagar(); //apagar animaciones (si las hay)
     iniciarJuego = true;
