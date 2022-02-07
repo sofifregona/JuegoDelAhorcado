@@ -5,9 +5,9 @@ var palabra, letrasPalabra, letrasIngresadas, letrasCorrectas, letrasIncorrectas
 //BOTÓN INICIAR JUEGO
 var botonIniciarJuego = document.querySelector("#boton-iniciar-juego");
 var inputInvisible = document.querySelector("#input-teclado");
-var screen = document.querySelector("canvas");
+var subcontenedor = document.querySelector("#subcontenedor");
 
-screen.addEventListener("click", function (event) {
+subcontenedor.addEventListener("click", function (event) {
     if (iniciarJuego) {
         event.preventDefault();
         inputInvisible.focus();
@@ -21,6 +21,7 @@ screen.addEventListener("click", function (event) {
 //Evento para (re)iniciar el juego al escuchar el click del mouse
 botonIniciarJuego.addEventListener("click", function (event) {
     event.preventDefault();
+    inputInvisible.blur();
     audio2.load();
     audio2.play();
     inputInvisible.focus();

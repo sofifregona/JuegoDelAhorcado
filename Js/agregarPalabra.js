@@ -13,6 +13,7 @@ var audio2 = audio = document.getElementById("audio2"); //audio boton
 //Evento para agregar palabra
 botonAgregarPalabra.addEventListener("click", function (event) {
     event.preventDefault();
+    inputInvisible.blur();
     click *= (-1);
     if (click > 0) {
         entrada = "";
@@ -34,6 +35,11 @@ botonAgregarPalabra.addEventListener("click", function (event) {
             audio1.play();
         }
     }
+});
+
+ingresarNuevaPalabra.addEventListener("click", function (event) {
+    event.preventDefault();
+    inputInvisible.blur();
 });
 
 //Función para capturar la entrada
@@ -181,6 +187,3 @@ function errorEntrada() {
         botonAgregarPalabra.classList.add("desplazar-izquierda");
     }, 1600);
 }
-
-
-//Span que muestre las palabras que no cumplen con los requisitos

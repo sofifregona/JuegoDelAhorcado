@@ -251,7 +251,7 @@ footer {
     }
 
     #panel-canvas {
-        width: 330px;
+        width: 100%;
         margin-bottom: 8px;
         padding: 4px;
         align-content: center;
