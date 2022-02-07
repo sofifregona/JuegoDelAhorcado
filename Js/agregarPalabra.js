@@ -34,11 +34,6 @@ botonAgregarPalabra.addEventListener("click", function (event) {
             audio1.load();
             audio1.play();
         }
-        /*
-        if (entrada.length > 0) {
-            entrada = entrada.split(" ");;
-            validarPalabras(entrada);  
-        }*/
     }
 });
 
@@ -67,28 +62,6 @@ function validarEntrada(entradas) {
     }
     return palabraInvalida;
 }
-
-
-/*
-//Valida el tamaño de las palabras y el tipo de caracteres ingresados
-function validarPalabras(entrada) {
-    palabrasInvalidas = [];
-    palabrasValidas = [];
-    for (var i = 0; i < entrada.length; i++) {
-        if (entrada[i].length < 3 || entrada[i] > 17) {
-            palabrasInvalidas.push(entrada[i]);
-        } else {
-            for (var j = 0; j < entrada[i].length; j++) {
-                if ((entrada[i].charCodeAt(j) < 65 || entrada[i].charCodeAt(j) > 90) && entrada[i].charCodeAt(j) != 209) {
-                    palabrasInvalidas.push(entrada[i]);
-                    break;
-                }
-            }
-            palabrasValidas.push(entrada[i]);
-        }
-    }
-}
-*/
 
 //Función para verificar que la palabra ingresada no esté repetida
 function agregarPalabra(entrada, listaDepalabras) {

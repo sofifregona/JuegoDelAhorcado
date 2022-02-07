@@ -7,9 +7,12 @@ var alto = screen.height;
 var tamanoPalabra;
 var tamanoFuente;
 
+var salvado;
+hombrecitoSalvado();
+
 function iniciarDibujo(palabra) {
     limpiarPantalla(0, 0, ancho, alto);
-    dibujarBaseMastil(0.3, 0.475);
+    dibujarBaseMastil(0.25, 0.55);
     tamanoPalabra = palabra.length;
     tamanoFuente = (ancho / tamanoPalabra);
     if (tamanoFuente > 60) {
@@ -54,7 +57,7 @@ function escribirLetrasCorrectas(lineas) {
     brush.font = tamanoFuente + "px Quicksand";
     brush.textAlign = "center";
     brush.beginPath();
-    brush.fillText(lineas, ancho * 0.5, alto * 0.8);
+    brush.fillText(lineas, ancho * 0.5, alto * 0.85);
     brush.fill();
 }
 
@@ -65,27 +68,27 @@ function escribirLetraIncorrectas(letrasIncorrectas) {
     brush.font = tamanoFuente * 0.75 + "px Quicksand";
     brush.textAlign = "center";
     brush.beginPath();
-    brush.fillText(letrasIncorrectas.join(" "), ancho * 0.5, alto * 0.65);
+    brush.fillText(letrasIncorrectas.join(" "), ancho * 0.5, alto * 0.7);
     brush.fill();
 }
 
 //DIBUJAR ERRORES
 function dibujarErrores(errores) {
     if (errores <= 3) {
-        dibujarMastil(0.4, 0.425, errores);
+        dibujarMastil(0.36, 0.47, errores);
     } else {
-        dibujarHombrecito(0.6, 0.235, errores);
+        dibujarHombrecito(0.61, 0.24, errores);
     }
 }
 
 //DIBUJAR BASE DE MASTIL
 function dibujarBaseMastil(x, y) {
     brush.strokeStyle = "black";
-    brush.lineWidth = 2;
+    brush.lineWidth = 3;
     brush.beginPath();
     brush.moveTo(ancho * x, alto * y);
-    brush.lineTo(ancho * (x + 0.2), alto * y);
-    brush.lineTo(ancho * (x + 0.1), alto * (y - 0.05));
+    brush.lineTo(ancho * (x + 0.22), alto * y);
+    brush.lineTo(ancho * (x + 0.11), alto * (y - 0.08));
     brush.lineTo(ancho * x, alto * y);
     brush.lineTo(ancho * (x + 0.1), alto * y);
     brush.stroke();
@@ -94,83 +97,84 @@ function dibujarBaseMastil(x, y) {
 //DIBUJAR RESTO DEL MASTIL
 function dibujarMastil(x, y, parte) {
     brush.strokeStyle = "black";
-    brush.lineWidth = 2;
+    brush.lineWidth = 3;
     switch (parte) {
         case 1: //mastil vertical
             brush.beginPath();
             brush.moveTo(ancho * x, alto * y);
-            brush.lineTo(ancho * x, alto * (y - 0.25));
+            brush.lineTo(ancho * x, alto * (y - 0.3));
             brush.stroke();
             break;
         case 2: //mastil horizontal
             brush.beginPath();
-            brush.moveTo(ancho * x, alto * (y - 0.25));
-            brush.lineTo(ancho * (x + 0.2), alto * (y - 0.25));
+            brush.moveTo(ancho * x, alto * (y - 0.3));
+            brush.lineTo(ancho * (x + 0.25), alto * (y - 0.3));
             brush.stroke();
             break;
         case 3: //soga
             brush.beginPath();
-            brush.lineTo(ancho * (x + 0.2), alto * (y - 0.25));
-            brush.lineTo(ancho * (x + 0.2), alto * (y - 0.215));
+            brush.lineTo(ancho * (x + 0.25), alto * (y - 0.3));
+            brush.lineTo(ancho * (x + 0.25), alto * (y - 0.265));
             brush.stroke();
             break;
     }
 }
 
 //DIBUJAR HOMRECITO
-function dibujarHombrecito(x, y, parte, salvado) {
+function dibujarHombrecito(x, y, parte) {
     brush.strokeStyle = "black";
-    brush.lineWidth = 2;
+    brush.lineWidth = 3;
     switch (parte) {
         case 4: //cabeza
             brush.beginPath();
-            brush.arc(ancho * x, alto * y, 13.5, 0, 2 * Math.PI);
+            brush.arc(ancho * x, alto * y, 18, 0, 2 * Math.PI);
             brush.stroke();
             break;
         case 5: //cuerpo
             brush.beginPath();
-            brush.lineTo(ancho * x, alto * (y + 0.025));
-            brush.lineTo(ancho * x, alto * (y + 0.125));
+            brush.lineTo(ancho * x, alto * (y + 0.036));
+            brush.lineTo(ancho * x, alto * (y + 0.15));
             brush.stroke();
             break;
         case 6: //brazo izquierdo
             if (salvado) {
                 brush.beginPath();
-                brush.lineTo(ancho * x, alto * (y + 0.04));
+                brush.lineTo(ancho * x, alto * (y + 0.065));
                 brush.lineTo(ancho * (x - 0.08), alto * (y + 0.01));
                 brush.stroke();
                 break;
             } else {
                 brush.beginPath();
-                brush.lineTo(ancho * x, alto * (y + 0.04));
-                brush.lineTo(ancho * (x - 0.04), alto * (y + 0.09));
+                brush.lineTo(ancho * x, alto * (y + 0.06));
+                brush.lineTo(ancho * (x - 0.05), alto * (y + 0.12));
                 brush.stroke();
                 break;
             }
         case 7: //brazo derecho
             if (salvado) {
                 brush.beginPath();
-                brush.lineTo(ancho * x, alto * (y + 0.04));
+                brush.lineTo(ancho * x, alto * (y + 0.065));
                 brush.lineTo(ancho * (x + 0.08), alto * (y + 0.01));
                 brush.stroke();
                 break;
             } else {
                 brush.beginPath();
-                brush.lineTo(ancho * x, alto * (y + 0.04));
-                brush.lineTo(ancho * (x + 0.04), alto * (y + 0.09));
+                brush.lineTo(ancho * x, alto * (y + 0.06));
+                brush.lineTo(ancho * (x + 0.05), alto * (y + 0.12));
                 brush.stroke();
                 break;
             }
         case 8: //pierna derecha
             brush.beginPath();
-            brush.lineTo(ancho * x, alto * (y + 0.125));
-            brush.lineTo(ancho * (x + 0.03), alto * (y + 0.2));
+            brush.lineTo(ancho * x, alto * (y + 0.15));
+            brush.lineTo(ancho * (x + 0.04), alto * (y + 0.25));
             brush.stroke();
             break;
         case 9: //piernza izquierda
+            salvado = false;
             brush.beginPath();
-            brush.lineTo(ancho * x, alto * (y + 0.125));
-            brush.lineTo(ancho * (x - 0.03), alto * (y + 0.2));
+            brush.lineTo(ancho * x, alto * (y + 0.15));
+            brush.lineTo(ancho * (x - 0.04), alto * (y + 0.25));
             brush.stroke();
             break;
     }
@@ -180,57 +184,58 @@ function dibujarHombrecito(x, y, parte, salvado) {
 function dibujarCarita(x, y, salvado) {
     if (salvado) {
         brush.strokeStyle = "black";
-        brush.lineWidth = 2;
+        brush.lineWidth = 2.5;
         brush.beginPath();
         brush.arc(ancho * x, alto * y, 1.4, 0, 2 * Math.PI);
         brush.stroke();
         brush.beginPath();
-        brush.arc(ancho * (x + 0.0245), alto * y, 1.4, 0, 2 * Math.PI);
+        brush.arc(ancho * (x + 0.03), alto * y, 1.4, 0, 2 * Math.PI);
         brush.stroke();
         brush.beginPath();
-        brush.arc(ancho * (x + 0.012), alto * (y + 0.008), 10, 0.35, 0.9 * Math.PI);
+        brush.arc(ancho * (x + 0.015), alto * (y + 0.008), 10, 0.35, 0.9 * Math.PI);
         brush.stroke();
     } else {
         brush.strokeStyle = "red";
-        brush.lineWidth = 2;
+        brush.lineWidth = 2.5;
         brush.beginPath();
         brush.lineTo(ancho * x, alto * y);
-        brush.lineTo(ancho * (x - 0.012), alto * (y - 0.012));
+        brush.lineTo(ancho * (x - 0.017), alto * (y - 0.014));
         brush.stroke();
         brush.beginPath();
-        brush.lineTo(ancho * x, alto * (y - 0.012));
-        brush.lineTo(ancho * (x - 0.012), alto * y);
+        brush.lineTo(ancho * x, alto * (y - 0.014));
+        brush.lineTo(ancho * (x - 0.017), alto * y);
         brush.stroke();
         brush.beginPath();
-        brush.lineTo(ancho * (x + 0.011), alto * y);
-        brush.lineTo(ancho * (x + 0.023), alto * (y - 0.012));
+        brush.lineTo(ancho * (x + 0.017), alto * y);
+        brush.lineTo(ancho * (x + 0.034), alto * (y - 0.014));
         brush.stroke();
         brush.beginPath();
-        brush.lineTo(ancho * (x + 0.011), alto * (y - 0.012));
-        brush.lineTo(ancho * (x + 0.023), alto * y);
+        brush.lineTo(ancho * (x + 0.017), alto * (y - 0.014));
+        brush.lineTo(ancho * (x + 0.034), alto * y);
         brush.stroke();
         brush.beginPath();
-        brush.arc(ancho * (x + 0.005), alto * (y + 0.026), 9, 3.655, 1.84 * Math.PI);
+        brush.arc(ancho * (x + 0.008), alto * (y + 0.035), 12, 3.656, 1.84 * Math.PI);
         brush.stroke();
     }
 }
 
 //DIBUJAR HOMBRECITO SALVADO
 function hombrecitoSalvado() {
-    limpiarPantalla(0, 0, ancho, alto * 0.55);
+    salvado = true;
+    limpiarPantalla(0, 0, ancho, alto * 0.58);
     dibujarHombrecito(0.5, 0.3, 4);
     dibujarHombrecito(0.5, 0.3, 5);
     dibujarHombrecito(0.5, 0.3, 6);
     dibujarHombrecito(0.5, 0.3, 7);
     dibujarHombrecito(0.5, 0.3, 8);
     dibujarHombrecito(0.5, 0.3, 9);
-    dibujarCarita(0.488, 0.292, true);
+    dibujarCarita(0.485, 0.292, true);
 }
 
 //ESCRIBIR Y ANIMAR PALABRA
 function escribir(palabra) {
     var color = "red";
-    brush.font = "bold 25px Quicksand";
+    brush.font = "bold 32px Playfair Display";
     brush.textAlign = "center";
     var time = setInterval(function () {
         if (!iniciarJuego) {

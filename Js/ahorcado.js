@@ -14,6 +14,18 @@ screen.addEventListener("click", function (event) {
     }
 });
 
+//Método para ingresar teclas apto para móviles con teclado suave
+inputInvisible.addEventListener("input", function(){
+    jugar();
+    tecla = inputInvisible.value.toUpperCase();
+    inputInvisible.value = "";
+});
+
+//Método para ingresar teclas ideal para escritorio
+window.addEventListener("keydown", function(event){
+    tecla = event.key.toString().toUpperCase();
+});
+
 //Evento para (re)iniciar el juego al escuchar el click del mouse
 botonIniciarJuego.addEventListener("click", function (event) {
     event.preventDefault();
@@ -31,12 +43,8 @@ botonIniciarJuego.addEventListener("click", function (event) {
     escribirLetrasCorrectas(lineas);
 });
 
-//Evento para evaluar estado de la partida al escuchar la tecla tipeada
-inputInvisible.addEventListener("input", function () {
-    tecla = inputInvisible.value.toUpperCase();
-    inputInvisible.value = "";
-    console.log(tecla);
-    console.log(inputInvisible.value);
+//Función que activa el juego
+function jugar() {
     if (iniciarJuego) { //sólo se evalúa si el juego está iniciado y no se está agregando una palabra
         if (teclaValida(tecla)) { //valida el tipo de tecla ingresada
             if (!contiene(tecla, letrasIngresadas)) { //evalua si ya se ingreso la tecla
@@ -46,13 +54,13 @@ inputInvisible.addEventListener("input", function () {
                     letrasCorrectas.push(tecla);
                     letrasCorrectas.sort();
                     lineas = transcribirLetra(lineas, tecla);
-                    limpiarPantalla(0, alto * 0.71, ancho, alto);
+                    limpiarPantalla(0, alto * 0.75, ancho, alto);
                     escribirLetrasCorrectas(lineas); //La grafica en su lugar
                 } else {
                     errores++;
                     dibujarErrores(errores);
                     letrasIncorrectas.push(tecla);
-                    limpiarPantalla(0, alto * 0.58, ancho, alto * 0.1);
+                    limpiarPantalla(0, alto * 0.62, ancho, alto * 0.1);
                     escribirLetraIncorrectas(letrasIncorrectas); //La grafica con las letras incorrectas
                 }
                 if (ganar()) { //Evalua si se ganó el juego
@@ -64,12 +72,12 @@ inputInvisible.addEventListener("input", function () {
                 if (perder()) {
                     iniciarJuego = false;
                     escribir("GAME OVER", true);
-                    dibujarCarita(0.595, 0.232, false);
+                    dibujarCarita(0.6015, 0.236, false);
                 }
             }
         }
     }
-});
+}
 
 //Función para seleccionar palabra aleatoria del banco de palabras
 function palabraAleatoria() {
@@ -92,7 +100,7 @@ function letrasSinRepetir(string) {
 /*Validación de la tecla por tamaño (deja fuera teclas como SHIFT, ALT, ENTER, etc)
 y utilizando código ASCII (deja fuera caracteres especiales a excepción de la ñ)*/
 function teclaValida(tecla) {
-    return ((tecla.charCodeAt() >= 65 && tecla.charCodeAt() <= 90) || tecla.charCodeAt() == 209);
+    return (tecla.length == 1 && ((tecla.charCodeAt() >= 65 && tecla.charCodeAt() <= 90) || tecla.charCodeAt() == 209));
 }
 
 //Función para evaluar si un array contiene un letra determinada

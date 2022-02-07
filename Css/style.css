@@ -23,11 +23,6 @@ body {
     text-align: center;
 }
 
-/*
-#titulo{
-    position:relative;
-}*/
-
 .imagen {
     filter: drop-shadow(2px 2px 2px black);
     margin-left: 14px;
@@ -130,7 +125,7 @@ p {
 }
 
 #panel-canvas {
-    width: 515px;
+    width: 410px;
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 5px 5px 20px 1px black;
     border-style: none;
@@ -144,7 +139,7 @@ p {
 }
 
 canvas {
-    width: 500px;
+    width: 400px;
     height: 500px;
     background-color: rgba(0, 0, 0, 0);
 }
@@ -231,14 +226,14 @@ footer {
     }
 
     #panel-canvas {
-        width: 412px;
+        width: 330px;
         margin-bottom: 8px;
         padding: 4px;
         align-content: center;
     }
 
     canvas {
-        width: 400px;
+        width: 320px;
         height: 400px;
     }
 
@@ -285,14 +280,14 @@ footer {
     }
 
     #panel-canvas {
-        width: 310px;
+        width: 250px;
         margin-bottom: 6px;
         padding: 3px;
         align-content: center;
     }
 
     canvas {
-        width: 300px;
+        width: 240px;
         height: 300px;
     }
 
