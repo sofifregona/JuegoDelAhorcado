@@ -8,7 +8,6 @@ var tamanoPalabra;
 var tamanoFuente;
 
 var salvado;
-hombrecitoSalvado();
 
 function iniciarDibujo(palabra) {
     limpiarPantalla(0, 0, ancho, alto);
@@ -69,6 +68,17 @@ function escribirLetraIncorrectas(letrasIncorrectas) {
     brush.textAlign = "center";
     brush.beginPath();
     brush.fillText(letrasIncorrectas.join(" "), ancho * 0.5, alto * 0.7);
+    brush.fill();
+}
+
+//ESCRIBIR PALABRA CORRECTA
+function palabraCorrecta(){
+    brush.fillStyle = "black";
+    brush.strokeStyle = "black";
+    brush.font = "bold 20px Playfair Display";
+    brush.textAlign = "center";
+    brush.beginPath();
+    brush.fillText("La palabra correcta era "+palabra, ancho * 0.5, alto * 0.95);
     brush.fill();
 }
 

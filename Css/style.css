@@ -45,7 +45,22 @@ h1 {
 }
 
 h2 {
+    width: 360px;
+    font-family: 'Playfair Display', sans-serif;
+    text-shadow: 3px 3px 4px black;
     color: white;
+    margin: auto;
+    margin-top:10px;
+}
+
+#instrucciones {
+    width: 360px;
+    color: white;
+    text-shadow: 3px 3px 4px black;
+    color: white;
+    margin: auto;
+    margin-top:15px;
+    text-align: justify;
 }
 
 p {
@@ -60,7 +75,7 @@ p {
 }
 
 #panel-botones {
-    padding-top: 15px;
+    padding-top: 20px;
 
 }
 
@@ -124,13 +139,21 @@ p {
     outline: none;
 }
 
+span {
+    color:red;
+    font-family: 'Quicksand';
+    font-weight:900;
+    font-size:0px;
+    text-shadow: 1px 1px 2px black;
+}
+
 #panel-canvas {
     width: 410px;
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 5px 5px 20px 1px black;
     border-style: none;
     border-radius: 20px;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -164,6 +187,18 @@ footer {
 /* EFECTOS */
 .invisible {
     opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.invisible2 {
+    opacity:0;
+    font-size:0px;
+    transition: all 0.5s ease-in-out;
+}
+
+.visible2 {
+    opacity:1;
+    font-size: 15px;
     transition: all 0.5s ease-in-out;
 }
 

@@ -73,6 +73,7 @@ function jugar() {
                     iniciarJuego = false;
                     escribir("GAME OVER", true);
                     dibujarCarita(0.6015, 0.236, false);
+                    palabraCorrecta();
                 }
             }
         }

@@ -2,6 +2,7 @@
 var botonAgregarPalabra = document.querySelector("#boton-agregar-palabra");
 var ingresarNuevaPalabra = document.querySelector("#ingresar-nueva-palabra");
 var textoBoton = document.querySelector("#texto-boton");
+var span = document.querySelector("span");
 
 var click = -1;
 var entrada = "";
@@ -19,6 +20,8 @@ botonAgregarPalabra.addEventListener("click", function (event) {
         activarAnimacion();
         audio2.load();
         audio2.play();
+        span.classList.remove("visible2");
+        span.classList.add("invisible2");
     } else {
         entradas = captureInput();
         if (!validarEntrada(entradas)) {
@@ -27,9 +30,12 @@ botonAgregarPalabra.addEventListener("click", function (event) {
             desactivarAnimacion();
             audio2.load();
             audio2.play();
-
+            span.classList.remove("visible2");
+            span.classList.add("invisible2");
         } else {
             click = 1;
+            span.classList.remove("invisible2");
+            span.classList.add("visible2");
             errorEntrada();
             audio1.load();
             audio1.play();
@@ -116,7 +122,7 @@ function desactivarAnimacion() {
     } else {
         textoBoton.classList.remove("visible");
         textoBoton.classList.add("invisible");
-        
+
         setTimeout(function () {
             textoBoton.innerHTML = "Agregar palabra";
             textoBoton.classList.remove("invisible");
