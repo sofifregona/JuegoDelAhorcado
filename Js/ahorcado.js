@@ -7,17 +7,6 @@ var botonIniciarJuego = document.querySelector("#boton-iniciar-juego");
 var inputInvisible = document.querySelector("#input-teclado");
 var subcontenedor = document.querySelector("#subcontenedor");
 
-subcontenedor.addEventListener("click", function (event) {
-    if (iniciarJuego) {
-        event.preventDefault();
-        inputInvisible.focus();
-    }
-});
-
-//Método para ingresar teclas apto para móviles con teclado suave
-
-//Método para ingresar teclas ideal para escritorio
-
 //Evento para (re)iniciar el juego al escuchar el click del mouse
 botonIniciarJuego.addEventListener("click", function (event) {
     event.preventDefault();
@@ -36,6 +25,14 @@ botonIniciarJuego.addEventListener("click", function (event) {
     letrasIncorrectas = [];
     lineas = calcularLineas();
     escribirLetrasCorrectas(lineas);
+});
+
+//Las entradas por teclado (suave o físico) se activan al hacer click en la zona del canvas o sus laterales
+subcontenedor.addEventListener("click", function (event) {
+    if (iniciarJuego) {
+        event.preventDefault();
+        inputInvisible.focus();
+    }
 });
 
 //Función que activa el juego
@@ -98,7 +95,7 @@ function letrasSinRepetir(string) {
 /*Validación de la tecla por tamaño (deja fuera teclas como SHIFT, ALT, ENTER, etc)
 y utilizando código ASCII (deja fuera caracteres especiales a excepción de la ñ)*/
 function teclaValida(tecla) {
-    return (tecla.length == 1 && ((tecla.charCodeAt() >= 65 && tecla.charCodeAt() <= 90) || tecla.charCodeAt() == 209));
+    return ((tecla.charCodeAt() >= 65 && tecla.charCodeAt() <= 90) || tecla.charCodeAt() == 209);
 }
 
 //Función para evaluar si un array contiene un letra determinada
