@@ -174,7 +174,7 @@ canvas {
 footer {
     margin-top: 20px;
     margin-bottom: 20px;
-    text-shadow: 3px 3px 4px black;
+    text-shadow: 2px 2px 2px rgb(0,0,0);
 }
 
 /********************************/
