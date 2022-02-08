@@ -56,10 +56,12 @@ h2 {
 #instrucciones {
     width: 400px;
     color: white;
-    text-shadow: 2px 2px 3px black;
+    font-size: 16px;
+    font-style:italic;
+    text-shadow: 2px 2px 2px rgb(0,0,0);
     margin: auto;
-    margin-top: 15px;
-    text-align: justify;
+    margin-top: 16px;
+    text-align: center;
 }
 
 p {
@@ -144,8 +146,8 @@ p {
     box-shadow: 0px 0px 40px 0px white;
     border-style: none;
     border-radius: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 15px;
     margin-left: auto;
     margin-right: auto;
     padding: 5px;

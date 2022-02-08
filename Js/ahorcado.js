@@ -1,6 +1,8 @@
 var iniciarJuego = false;
 var errores = 0;
 var palabra, letrasPalabra, letrasIngresadas, letrasCorrectas, letrasIncorrectas, tecla, lineas;
+var audio3 = document.getElementById("audio3");
+var audio4 = document.getElementById("audio4");
 
 //BOTÓN INICIAR JUEGO
 var botonIniciarJuego = document.querySelector("#boton-iniciar-juego");
@@ -59,12 +61,18 @@ inputInvisible.addEventListener("input", function () {
                 }
                 if (ganar()) { //Evalua si se ganó el juego
                     iniciarJuego = false;
+                    inputInvisible.blur();
+                    audio3.load();
+                    audio3.play();
                     escribir("¡GANASTE!");
                     encender();
                     hombrecitoSalvado();
                 }
                 if (perder()) {
                     iniciarJuego = false;
+                    inputInvisible.blur();
+                    audio4.load();
+                    audio4.play();
                     escribir("GAME OVER");
                     dibujarCarita(0.6015, 0.236, false);
                     palabraCorrecta();

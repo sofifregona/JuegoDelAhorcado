@@ -3,7 +3,7 @@
 var bits = 200;
 var intensity = 5;
 var speed = 15;
-var colours = new Array("#FF8000", "#5FB404", "#084B8A", "#DF0101", "#FF0080");
+var colours = new Array("#FF8000", "#5FB404", "#084B8A", "#DF0101", "#FF0080", "#00ffea", "#eeff00");
 var dx, xpos, ypos, bangheight;
 var Xpos = new Array();
 var Ypos = new Array();
@@ -86,7 +86,7 @@ function launch() {
         xpos = Math.round((0.5 + Math.random()) * swide * 0.5);
         ypos = shigh - 5;
         dx = (Math.random() - 0.5) * 4;
-        bangheight = Math.round((0.5 + Math.random()) * shigh * 0.4);
+        bangheight = Math.round((0.5 + Math.random()) * shigh * 0.3);
         document.getElementById("lg").style.backgroundColor = colours[colour];
         document.getElementById("tg").style.backgroundColor = colours[colour];
     }
@@ -144,5 +144,6 @@ function apagar() {
     if (on){
         on = false;
         document.getElementById("bod").remove();
+        clearInterval('stepthrough()');
     }
 }

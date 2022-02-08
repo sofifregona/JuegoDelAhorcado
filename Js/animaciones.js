@@ -11,6 +11,7 @@ function activarAnimacion() {
         textoBoton.innerHTML = "Almacenar palabra";
         textoBoton.classList.add("visible");
     }, 800);
+    botonAgregarPalabra.blur();
 
 }
 
@@ -39,6 +40,7 @@ function desactivarAnimacion() {
             textoBoton.classList.remove("invisible");
             textoBoton.classList.add("visible");
         }, 2400);
+        botonAgregarPalabra.blur();
     } else {
         textoBoton.classList.remove("visible");
         textoBoton.classList.add("invisible");
@@ -48,6 +50,7 @@ function desactivarAnimacion() {
             textoBoton.classList.remove("invisible");
             textoBoton.classList.add("visible");
         }, 800);
+        botonAgregarPalabra.blur();
     }
 }
 
@@ -107,4 +110,5 @@ function errorEntrada() {
         botonAgregarPalabra.classList.remove("erratico-izquierda");
         botonAgregarPalabra.classList.add("desplazar-izquierda");
     }, 1600);
+    botonAgregarPalabra.blur();
 }

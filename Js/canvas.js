@@ -53,7 +53,7 @@ function transcribirLetra(lineas, tecla) {
 function escribirLetrasCorrectas(lineas) {
     brush.fillStyle = "black";
     brush.strokeStyle = "black";
-    brush.font = tamanoFuente + "px Playfair Display";
+    brush.font = "bold " + tamanoFuente + "px Playfair Display";
     brush.textAlign = "center";
     brush.beginPath();
     brush.fillText(lineas, ancho * 0.5, alto * 0.85);
@@ -64,7 +64,7 @@ function escribirLetrasCorrectas(lineas) {
 function escribirLetraIncorrectas(letrasIncorrectas) {
     brush.fillStyle = "red";
     brush.strokeStyle = "red";
-    brush.font = tamanoFuente * 0.75 + "px Playfair Display";
+    brush.font = "bold " + (tamanoFuente * 0.75) + "px Playfair Display";
     brush.textAlign = "center";
     brush.beginPath();
     brush.fillText(letrasIncorrectas.join(" "), ancho * 0.5, alto * 0.7);

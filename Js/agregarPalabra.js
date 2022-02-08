@@ -7,8 +7,8 @@ var click = -1;
 var entrada = "";
 var palabrasInvalidas = [];
 var palabrasValidas = [];
-var audio1 = audio = document.getElementById("audio1"); //audio error entrada
-var audio2 = audio = document.getElementById("audio2"); //audio boton
+var audio1 = document.getElementById("audio1"); //audio error entrada
+var audio2 = document.getElementById("audio2"); //audio boton
 
 //Evento para agregar palabra
 botonAgregarPalabra.addEventListener("click", function (event) {
