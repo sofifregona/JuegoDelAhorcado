@@ -47,7 +47,7 @@ h1 {
 h2 {
     width: 400px;
     font-family: 'Playfair Display', sans-serif;
-    text-shadow: 3px 3px 4px black;
+    text-shadow: 2px 2px 3px black;
     color: white;
     margin: auto;
     margin-top: 10px;
@@ -56,8 +56,7 @@ h2 {
 #instrucciones {
     width: 400px;
     color: white;
-    text-shadow: 3px 3px 4px black;
-    color: white;
+    text-shadow: 2px 2px 3px black;
     margin: auto;
     margin-top: 15px;
     text-align: justify;
@@ -87,7 +86,7 @@ p {
     font-size: 15px;
     border: 2px solid;
     border-color: #072B61;
-    box-shadow: 5px 5px 8px 1px black;
+    box-shadow: 5px 5px 8px 0px rgb(20, 20, 20);
     outline: none;
     text-align: center;
 }
@@ -141,8 +140,8 @@ p {
 
 #panel-canvas {
     width: 410px;
-    background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 5px 5px 20px 1px black;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0px 0px 40px 0px white;
     border-style: none;
     border-radius: 20px;
     margin-top: 10px;
@@ -173,6 +172,7 @@ canvas {
 footer {
     margin-top: 20px;
     margin-bottom: 20px;
+    text-shadow: 3px 3px 4px black;
 }
 
 /********************************/
@@ -190,13 +190,13 @@ footer {
 
 .desplazar-izquierda {
     transform: translate(-125px, 0);
-    box-shadow: 0px 5px 8px 1px black;
+    box-shadow: 0px 5px 8px 0px rgb(20, 20, 20);
     transition: all 1s ease-in-out;
 }
 
 .desplazar-derecha {
     transform: translate(125px, 0);
-    box-shadow: 5px 5px 8px 1px black;
+    box-shadow: 5px 5px 8px 0px rgb(20, 20, 20);
     transition: all 1s ease-in-out;
 }
 
@@ -207,13 +207,13 @@ footer {
 
 .erratico-derecha {
     transform: translate(-120px, 0px);
-    box-shadow: 0px 5px 8px 1px black;
+    box-shadow: 0px 5px 8px 0px rgb(20, 20, 20);
     transition: all 0.1s ease-in-out;
 }
 
 .erratico-izquierda {
     transform: translate(-125px, 0px);
-    box-shadow: 0px 5px 8px 1px black;
+    box-shadow: 0px 5px 8px 0px rgb(20, 20, 20);
     transition: all 0.1s ease-in-out;
 }
 

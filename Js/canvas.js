@@ -53,7 +53,7 @@ function transcribirLetra(lineas, tecla) {
 function escribirLetrasCorrectas(lineas) {
     brush.fillStyle = "black";
     brush.strokeStyle = "black";
-    brush.font = tamanoFuente + "px Quicksand";
+    brush.font = tamanoFuente + "px Playfair Display";
     brush.textAlign = "center";
     brush.beginPath();
     brush.fillText(lineas, ancho * 0.5, alto * 0.85);
@@ -64,7 +64,7 @@ function escribirLetrasCorrectas(lineas) {
 function escribirLetraIncorrectas(letrasIncorrectas) {
     brush.fillStyle = "red";
     brush.strokeStyle = "red";
-    brush.font = tamanoFuente * 0.75 + "px Quicksand";
+    brush.font = tamanoFuente * 0.75 + "px Playfair Display";
     brush.textAlign = "center";
     brush.beginPath();
     brush.fillText(letrasIncorrectas.join(" "), ancho * 0.5, alto * 0.7);
@@ -245,13 +245,13 @@ function hombrecitoSalvado() {
 //ESCRIBIR Y ANIMAR PALABRA
 function escribir(palabra) {
     var color = "red";
-    brush.font = "bold 32px Playfair Display";
-    brush.textAlign = "center";
     var time = setInterval(function () {
         if (!iniciarJuego) {
             brush.clearRect(0, 0, ancho, alto * 0.11);
             brush.fillStyle = color;
             brush.strokeStyle = color;
+            brush.font = "bold 32px Playfair Display";
+            brush.textAlign = "center";
             brush.beginPath();
             brush.fillText(palabra, ancho * 0.5, alto * 0.1);
             brush.fill();

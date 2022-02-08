@@ -59,13 +59,13 @@ inputInvisible.addEventListener("input", function () {
                 }
                 if (ganar()) { //Evalua si se ganó el juego
                     iniciarJuego = false;
-                    escribir("¡GANASTE!", true);
+                    escribir("¡GANASTE!");
                     encender();
                     hombrecitoSalvado();
                 }
                 if (perder()) {
                     iniciarJuego = false;
-                    escribir("GAME OVER", true);
+                    escribir("GAME OVER");
                     dibujarCarita(0.6015, 0.236, false);
                     palabraCorrecta();
                 }
