@@ -27,6 +27,8 @@ function write_fire() {
         b.appendChild(div("lg", 3, 4));
         b.appendChild(div("tg", 2, 3));
         for (var i = 0; i < bits; i++) b.appendChild(div("bg" + i, 1, 1));
+    } else {
+        return "";
     }
 }
 function div(id, w, h) {
@@ -38,6 +40,8 @@ function div(id, w, h) {
         d.style.height = h + "px";
         d.setAttribute("id", id);
         return (d);
+    } else {
+        return "";
     }
 }
 function bang() {
@@ -55,6 +59,8 @@ function bang() {
             Ypos[i] += (dY[i] += 0.1 / intensity);
         }
         if (A != bits) setTimeout("bang()", speed);
+    } else {
+        return "";
     }
 }
 function stepthrough() {
@@ -78,6 +84,8 @@ function stepthrough() {
         document.getElementById("lg").style.top = ypos + "px";
         document.getElementById("tg").style.left = oldx + "px";
         document.getElementById("tg").style.top = oldy + "px";
+    } else {
+        return "";
     }
 }
 function launch() {
@@ -89,6 +97,8 @@ function launch() {
         bangheight = Math.round((0.5 + Math.random()) * shigh * 0.4);
         document.getElementById("lg").style.backgroundColor = colours[colour];
         document.getElementById("tg").style.backgroundColor = colours[colour];
+    } else {
+        return "";
     }
 }
 window.onscroll = set_scroll;
@@ -111,6 +121,8 @@ function set_scroll() {
         var s = document.getElementById("bod").style;
         s.top = sdown + "px";
         s.left = sleft + "px";
+    } else {
+        return "";
     }
 }
 window.onresize = set_width;
@@ -125,23 +137,22 @@ function set_width() {
             swide = document.body.clientWidth;
             shigh = document.body.clientHeight;
         }
+    } else {
+        return "";
     }
 }
 
-function encender(){
-    on = true;
+function encender() {
     if (document.getElementById) {
-        if (on == true) {
+        if (on) {
             set_width(); write_fire(); launch(); setInterval('stepthrough()', speed);
-        } else {
-            return ("");
         }
     }
 }
 
 //Apagar efecto
 function apagar() {
-    if (on){
+    if (on) {
         on = false;
         document.getElementById("bod").remove();
         clearInterval('stepthrough()');

@@ -66,6 +66,7 @@ inputInvisible.addEventListener("input", function () {
                     audio3.load();
                     audio3.play();
                     escribir("¡GANASTE!");
+                    on = true;
                     encender();
                     hombrecitoSalvado();
                 }
