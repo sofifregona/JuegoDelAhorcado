@@ -58,8 +58,8 @@ function captureInput() {
 //Función para validar que las palabras ingresadas tengan entre 3 y 17 letras, y no posean caracteres especiales
 function validarEntrada(entradas) {
     var palabraInvalida = false;
-    entrada = entradas.split(" ");
     if (entrada.length != 0) {
+        entrada = entradas.split(" ");
         for (var i = 0; i < entrada.length; i++) {
             if (entrada[i].length < 3 || entrada[i] > 17) {
                 palabraInvalida = true;
@@ -79,9 +79,11 @@ function validarEntrada(entradas) {
 
 //Función para verificar que la palabra ingresada no esté repetida
 function agregarPalabra(entrada, listaDepalabras) {
-    entrada.forEach(function (palabra) {
-        if (!contiene(palabra, listaDepalabras)) {
-            listaDepalabras.push(palabra);
-        }
-    });
+    if (entrada.length != 0) {
+        entrada.forEach(function (palabra) {
+            if (!contiene(palabra, listaDepalabras)) {
+                listaDepalabras.push(palabra);
+            }
+        });
+    }
 }
