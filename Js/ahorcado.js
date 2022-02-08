@@ -27,6 +27,7 @@ botonIniciarJuego.addEventListener("click", function (event) {
     letrasIncorrectas = [];
     lineas = calcularLineas();
     escribirLetrasCorrectas(lineas);
+    botonIniciarJuego.blur();
 });
 
 //Las entradas por teclado (suave o físico) se activan al hacer click en la zona del canvas o sus laterales

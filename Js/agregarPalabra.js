@@ -35,6 +35,7 @@ botonAgregarPalabra.addEventListener("click", function (event) {
             audio1.play();
         }
     }
+    botonAgregarPalabra.blur();
 });
 
 ingresarNuevaPalabra.addEventListener("click", function (event) {

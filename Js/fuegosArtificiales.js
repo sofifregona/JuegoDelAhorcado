@@ -86,7 +86,7 @@ function launch() {
         xpos = Math.round((0.5 + Math.random()) * swide * 0.5);
         ypos = shigh - 5;
         dx = (Math.random() - 0.5) * 4;
-        bangheight = Math.round((0.5 + Math.random()) * shigh * 0.3);
+        bangheight = Math.round((0.5 + Math.random()) * shigh * 0.4);
         document.getElementById("lg").style.backgroundColor = colours[colour];
         document.getElementById("tg").style.backgroundColor = colours[colour];
     }
