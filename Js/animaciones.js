@@ -20,7 +20,7 @@ function desactivarAnimacion() {
     botonAgregarPalabra.classList.add("desplazar-original");
     ingresarNuevaPalabra.classList.remove("desplazar-derecha");
     ingresarNuevaPalabra.classList.add("desplazar-original");
-    if (entradas.length > 0) {
+    if (entrada.length > 0) {
         textoBoton.classList.remove("visible");
         textoBoton.classList.add("invisible");
 

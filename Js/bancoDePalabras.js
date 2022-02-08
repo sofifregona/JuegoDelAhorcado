@@ -28,3 +28,7 @@ var listaDepalabras = ["Sueño", "Batalla", "Elefante", "Filete", "Choque", "Gra
     "Cabello", "Membrillo", "Lampara", "Motivo", "Jabon", "Hombre", "Mendigo", "Pena", "Maestro", "Asiento", "Libertad",
     "Tiempo", "Boca", "Rana", "Explicacion", "Cuna", "Devoto", "Horoscopo", "Creacion", "Pais", "Serpiente", "Esfuerzo",
     "Titulo", "Boton", "Internet", "Terremoto", "Tarjeta", "Miedo", "Arbol", "Espacio", "Consejo", "Necesidad"];
+
+    for (var i = 0; i < listaDepalabras.length; i++){
+        listaDepalabras[i] = listaDepalabras[i].toUpperCase();
+    }

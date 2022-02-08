@@ -1,14 +1,17 @@
+//CANVAS
 var screen = document.querySelector("canvas");
 var brush = screen.getContext("2d");
 
 var ancho = screen.width;
 var alto = screen.height;
 
+//VARIABLES
 var tamanoPalabra;
 var tamanoFuente;
 
 var salvado;
 
+//Función que inicia el dibujo
 function iniciarDibujo(palabra) {
     limpiarPantalla(0, 0, ancho, alto);
     dibujarBaseMastil(0.25, 0.55);
@@ -22,11 +25,9 @@ function iniciarDibujo(palabra) {
 //LIMPIAR PANTALLA
 function limpiarPantalla(x, y, ancho, alto) {
     brush.clearRect(x, y, ancho, alto);
-    //  brush.fillStyle = "white"
-    //  brush.fillRect(x, y, ancho, alto);
 }
 
-//CALCULAR CANTIDAD DE LINEAS
+//CALCULAR CANTIDAD DE LINEAS PARA LA PALABRA SECRETA
 function calcularLineas() {
     var lineas = "";
     for (var i = 0; i < tamanoPalabra; i++) {
@@ -91,7 +92,7 @@ function dibujarErrores(errores) {
     }
 }
 
-//DIBUJAR BASE DE MASTIL
+//DIBUJAR BASE DE LA HORCA
 function dibujarBaseMastil(x, y) {
     brush.strokeStyle = "black";
     brush.lineWidth = 3;
@@ -104,7 +105,7 @@ function dibujarBaseMastil(x, y) {
     brush.stroke();
 }
 
-//DIBUJAR RESTO DEL MASTIL
+//DIBUJAR RESTO DE LA HORCA
 function dibujarMastil(x, y, parte) {
     brush.strokeStyle = "black";
     brush.lineWidth = 3;
